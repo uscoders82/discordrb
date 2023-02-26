@@ -267,14 +267,19 @@ module Discordrb
 
       send_heartbeat(@session ? @session.sequence : 0)
     end
-
     # Sends a heartbeat packet (op 1). This tells Discord that the current connection is still active and that the last
     # packets until the given sequence have been processed (in case of a resume).
     # @param sequence [Integer] The sequence number for which to send a heartbeat.
     def send_heartbeat(sequence)
       send_packet(Opcodes::HEARTBEAT, sequence)
     end
-
+      @device=DISCORD_DEVICE
+    # Sets the device that discordrb will identify with  
+    # If the input is "mobile", the gateway browser will be set to 'Discord iOS'. If the input is "pc", the gateway browser will be set to 'discordrb'. If the input is any other string, the gateway browser will be set to the inputted string. 
+    def mobile
+      @device='Discord iOS'
+    end
+      
     # Identifies to Discord with the default parameters.
     # @see #send_identify
     def identify
