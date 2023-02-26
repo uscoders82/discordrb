@@ -135,6 +135,9 @@ module Discordrb
 
     # The version of the gateway that's supposed to be used.
     GATEWAY_VERSION = 9
+    
+    # The browser that the gateway should identify with
+    DISCORD_DEVICE = 'discordrb'
 
     # Heartbeat ACKs are Discord's way of verifying on the client side whether the connection is still alive. If this is
     # set to true (default value) the gateway client will use that functionality to detect zombie connections and
