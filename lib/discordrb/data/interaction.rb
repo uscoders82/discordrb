@@ -339,6 +339,9 @@ module Discordrb
     # @return [Integer]
     attr_reader :id
 
+    # @return [boolean]
+    attr_reader :nsfw
+
     # @!visibility private
     def initialize(data, bot, server_id = nil)
       @bot = bot
@@ -350,6 +353,7 @@ module Discordrb
       @description = data['description']
       @default_permission = data['default_permission']
       @options = data['options']
+      @nsfw = data['nsfw?']
     end
 
     # @param subcommand [String, nil] The subcommand to mention.
