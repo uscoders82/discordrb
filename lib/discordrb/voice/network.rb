@@ -100,8 +100,8 @@ module Discordrb::Voice
     def send_discovery
       discovery_packet = [@ssrc].pack('N')
 
-      # Add 66 zeroes so the packet is 70 bytes long
-      discovery_packet += "\0" * 66
+      # Add 66 zeroes so the packet is 74 bytes long
+      discovery_packet += "\0" * 70
       send_packet(discovery_packet)
     end
 
