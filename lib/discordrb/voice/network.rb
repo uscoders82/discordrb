@@ -69,7 +69,7 @@ module Discordrb::Voice
     # @return [Array(String, Integer)] the IP and port received from the discovery reply.
     def receive_discovery_reply
       # Wait for a UDP message
-      message = @socket.recv(70)
+      message = @socket.recv(74)
       ip = message[4..-3].delete("\0")
       port = message[-2..].unpack1('n')
       [ip, port]
